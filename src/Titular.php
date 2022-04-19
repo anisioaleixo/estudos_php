@@ -4,12 +4,14 @@ class Titular
 {
     private $cpf;
     private $nome;
+    private $endereco;
 
-    public function __construct(CPF $cpf, string $nome)
+    public function __construct(CPF $cpf, string $nome, Endereco $endereco)
     {
         $this->cpf = $cpf;
         $this->validaNomeTitular($nome);
         $this->nome = $nome;
+        $this->endereco = $endereco;
     }
 
     public function recuperaCpf(): string
@@ -22,6 +24,13 @@ class Titular
         return $this->nome;
     }
 
+    public function recuperaEndereco(): Endereco
+    {
+        return $this->endereco;
+    }
+
+
+
     private function validaNomeTitular(string $nomeTitular)
     {
         if (strlen($nomeTitular) < 5) {
@@ -29,4 +38,6 @@ class Titular
             exit();
         }
     }
+
+
 }
