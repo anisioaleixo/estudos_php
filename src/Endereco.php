@@ -1,4 +1,5 @@
 <?php
+
 class Endereco
 {
     private $cidade;
@@ -33,5 +34,4 @@ class Endereco
     {
         return $this->numero;
     }
-
 }
